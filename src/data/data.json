@@ -1,0 +1,21 @@
+{
+  "services": [
+    { "id": 1, "icon": "🥘", "title": "Fresh Ingredients", "desc": "We use only locally sourced, farm-fresh ingredients every single day." },
+    { "id": 2, "icon": "🚴", "title": "Fast Delivery", "desc": "Hot meals delivered to your door in under 40 minutes, guaranteed." },
+    { "id": 3, "icon": "🏡", "title": "Homemade Taste", "desc": "Every dish is prepared with love, just like mom used to make." },
+    { "id": 4, "icon": "🥗", "title": "Healthy Options", "desc": "Nutritious, balanced meals crafted by our in-house nutritionist." }
+  ],
+  "menu": [
+    { "id": 1, "name": "Dal Makhani", "price": 180, "category": "Main Course", "image": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=400&q=80" },
+    { "id": 2, "name": "Butter Chicken", "price": 240, "category": "Main Course", "image": "https://images.unsplash.com/photo-1603894584373-5ac82b2ae398?w=400&q=80" },
+    { "id": 3, "name": "Paneer Tikka", "price": 200, "category": "Starter", "image": "https://images.unsplash.com/photo-1567188040759-fb8a883dc6d8?w=400&q=80" },
+    { "id": 4, "name": "Masala Dosa", "price": 120, "category": "Breakfast", "image": "https://images.unsplash.com/photo-1630383249896-424e482df921?w=400&q=80" },
+    { "id": 5, "name": "Biryani Bowl", "price": 280, "category": "Main Course", "image": "https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=400&q=80" },
+    { "id": 6, "name": "Samosa", "price": 80, "category": "Starter", "image": "https://images.unsplash.com/photo-1601050690597-df0568f70950?w=400&q=80" }
+  ],
+  "testimonials": [
+    { "id": 1, "name": "Priya Sharma", "location": "Bandra, Mumbai", "rating": 5, "text": "The food feels exactly like home-cooked meals. Dal Makhani is absolutely divine. Been ordering 3 times a week!" },
+    { "id": 2, "name": "Rohit Mehta", "location": "Andheri, Mumbai", "rating": 5, "text": "Super fast delivery and the biryani is packed with flavour. Best tiffin service in Mumbai, hands down." },
+    { "id": 3, "name": "Sneha Patel", "location": "Thane, Mumbai", "rating": 4, "text": "Love the healthy options and the fresh ingredients. You can actually taste the difference. Highly recommend!" }
+  ]
+}

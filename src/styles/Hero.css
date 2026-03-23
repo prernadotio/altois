@@ -1,0 +1,110 @@
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(135deg, rgba(26,10,0,0.75) 0%, rgba(92,45,10,0.50) 100%),
+    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1600&q=80') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;        /* ← center horizontally */
+  padding-top: 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  bottom: -2px; left: 0; right: 0;
+  height: 80px;
+  background: var(--cream);
+  clip-path: ellipse(55% 100% at 50% 100%);
+}
+
+.hero .container {
+  display: flex;
+  justify-content: center;        /* ← center the container */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 680px;               /* ← controlled width */
+  text-align: center;             /* ← text center */
+  animation: fadeUp 0.9s ease both;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: rgba(255,107,44,0.18);
+  border: 1px solid rgba(255,107,44,0.4);
+  color: #ffb08a;
+  padding: 6px 18px;
+  border-radius: 50px;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+  margin-bottom: 24px;
+  animation: fadeUp 0.9s 0.1s ease both;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.8rem, 6vw, 4.5rem);
+  line-height: 1.1;
+  color: var(--white);
+  margin-bottom: 20px;
+  animation: fadeUp 0.9s 0.2s ease both;
+}
+
+.hero h1 em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  color: rgba(255,255,255,0.80);
+  margin-bottom: 36px;
+  line-height: 1.7;
+  animation: fadeUp 0.9s 0.3s ease both;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;        /* ← buttons center */
+  animation: fadeUp 0.9s 0.4s ease both;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-top: 52px;
+  justify-content: center;        /* ← stats center */
+  animation: fadeUp 0.9s 0.5s ease both;
+}
+
+.hero-stat-num {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  color: var(--white);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hero-stat-label {
+  font-size: 0.80rem;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.5px;
+  margin-top: 4px;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .hero-stats { gap: 20px; flex-wrap: wrap; }
+  .hero-stat-num { font-size: 1.4rem; }
+}
