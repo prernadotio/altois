@@ -5,6 +5,15 @@ import '../styles/Hero.css';
 export default function Hero() {
   return (
     <section className="hero" id="home">
+      {/* Preload LCP image via JS-injected link — biggest LCP fix */}
+      <noscript>
+        <link
+          rel="preload"
+          as="image"
+          href="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=75&fm=webp"
+          fetchpriority="high"
+        />
+      </noscript>
       <div className="container">
         <div className="hero-content">
           <span className="hero-badge">

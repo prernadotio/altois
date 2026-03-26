@@ -38,8 +38,9 @@
   color: var(--dark);
 }
 
+/* Fix: was var(--gray) ~#999, now #5a5a5a for WCAG AA contrast on cream bg */
 .service-card p {
-  color: var(--gray);
+  color: #5a5a5a;
   font-size: 0.93rem;
   line-height: 1.6;
 }

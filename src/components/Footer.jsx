@@ -2,10 +2,10 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from 'react-icons/fa';
 import '../styles/Footer.css';
 
 const socialLinks = [
-  { icon: <FaFacebookF />,  href: '#' },
-  { icon: <FaInstagram />,  href: '#' },
-  { icon: <FaTwitter />,    href: '#' },
-  { icon: <FaYoutube />,    href: '#' },
+  { icon: <FaFacebookF />,  href: '#', label: 'Follow us on Facebook' },
+  { icon: <FaInstagram />,  href: '#', label: 'Follow us on Instagram' },
+  { icon: <FaTwitter />,    href: '#', label: 'Follow us on Twitter' },
+  { icon: <FaYoutube />,    href: '#', label: 'Subscribe on YouTube' },
 ];
 
 export default function Footer() {
@@ -17,8 +17,11 @@ export default function Footer() {
             <div className="footer-brand-name">GharKa<span>Khana</span></div>
             <p>Authentic home-cooked food delivered to your doorstep. Made fresh daily with love.</p>
             <div className="footer-social">
-              {socialLinks.map(({ icon, href }, i) => (
-                <a key={i} href={href} className="social-link">{icon}</a>
+              {/* Fix: aria-label on each social link */}
+              {socialLinks.map(({ icon, href, label }) => (
+                <a key={label} href={href} className="social-link" aria-label={label}>
+                  {icon}
+                </a>
               ))}
             </div>
           </div>

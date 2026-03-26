@@ -22,12 +22,13 @@
 
 .about-image-wrap:hover img { transform: scale(1.04); }
 
+/* Fix: was rgba(255,107,44,0.10) tinted text — now solid #c44a0e for AA contrast */
 .about-tag {
   display: inline-block;
   background: rgba(255,107,44,0.10);
-  color: var(--orange);
+  color: #c44a0e;
   font-size: 0.82rem;
-  font-weight: 500;
+  font-weight: 600;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 6px 16px;
@@ -43,8 +44,9 @@
   color: var(--dark);
 }
 
+/* Fix: #666 on white is borderline — use #555 for clear WCAG AA pass */
 .about-text p {
-  color: #666;
+  color: #555;
   margin-bottom: 14px;
   font-size: 1rem;
 }

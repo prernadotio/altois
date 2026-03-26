@@ -14,8 +14,9 @@
   color: var(--dark);
 }
 
+/* Fix: was var(--gray) — use #555 for WCAG AA on cream background */
 .contact-info p {
-  color: var(--gray);
+  color: #555;
   margin-bottom: 32px;
   font-size: 0.95rem;
 }
@@ -37,6 +38,7 @@
   place-items: center;
   font-size: 1rem;
   flex-shrink: 0;
+  color: #fff;
 }
 
 .contact-form {
@@ -68,6 +70,7 @@
   color: var(--dark);
   outline: none;
   transition: border-color 0.2s, box-shadow 0.2s;
+  box-sizing: border-box;
 }
 
 .form-group input:focus,
@@ -83,7 +86,7 @@
 
 .form-error {
   font-size: 0.8rem;
-  color: #e53e3e;
+  color: #c0392b;
   margin-top: 5px;
 }
 
@@ -92,7 +95,7 @@
 .form-success {
   text-align: center;
   padding: 24px 0;
-  color: #2f855a;
+  color: #276749;
   font-weight: 500;
   font-size: 1rem;
 }

@@ -39,10 +39,11 @@
   gap: 12px;
 }
 
+/* Fix: #c44a0e passes WCAG AA on cream background vs var(--orange) which may not */
 .menu-item-category {
   font-size: 0.75rem;
-  color: var(--orange);
-  font-weight: 500;
+  color: #c44a0e;
+  font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   margin-bottom: 4px;
@@ -58,6 +59,6 @@
   font-family: var(--font-display);
   font-size: 1.2rem;
   font-weight: 700;
-  color: var(--orange);
+  color: #c44a0e;
   white-space: nowrap;
 }

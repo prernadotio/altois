@@ -1,7 +1,9 @@
 .testimonials { background: var(--dark); }
 
 .testimonials .section-title { color: var(--white); }
-.testimonials .section-subtitle { color: rgba(255,255,255,0.5); }
+
+/* Fix: was rgba(255,255,255,0.5) — bumped to 0.65 for WCAG AA on dark bg */
+.testimonials .section-subtitle { color: rgba(255,255,255,0.65); }
 
 .testimonials-grid {
   display: grid;
@@ -30,7 +32,7 @@
 }
 
 .testimonial-text {
-  color: rgba(255,255,255,0.80);
+  color: rgba(255,255,255,0.85);
   font-size: 0.97rem;
   line-height: 1.75;
   margin-bottom: 24px;
@@ -62,7 +64,8 @@
   font-size: 0.95rem;
 }
 
+/* Fix: was 0.4 opacity — bumped to 0.6 for better readability */
 .testimonial-location {
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.4);
+  color: rgba(255,255,255,0.6);
 }
