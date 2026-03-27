@@ -5,15 +5,28 @@ import '../styles/Hero.css';
 export default function Hero() {
   return (
     <section className="hero" id="home">
-      {/* Preload LCP image via JS-injected link — biggest LCP fix */}
-      <noscript>
-        <link
-          rel="preload"
-          as="image"
-          href="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=75&fm=webp"
-          fetchpriority="high"
-        />
-      </noscript>
+      {/*
+        CRITICAL LCP FIX:
+        Browser cannot preload CSS background-image — it only discovers it
+        after parsing CSS, which is too late. LCP was hitting the navbar logo
+        instead of the food image.
+
+        Solution: real <img> tag with fetchpriority="high" + loading="eager"
+        so browser fetches it immediately in the HTML parse phase.
+        The image is absolutely positioned to fill the section — UI is identical.
+      */}
+      <img
+        className="hero-bg-img"
+        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=60&fm=webp"
+        alt=""
+        aria-hidden="true"
+        fetchpriority="high"
+        loading="eager"
+        decoding="sync"
+        width="900"
+        height="600"
+      />
+
       <div className="container">
         <div className="hero-content">
           <span className="hero-badge">
@@ -30,8 +43,10 @@ export default function Hero() {
             <a href="#menu" className="btn btn-primary">
               <FiShoppingCart /> Order Now
             </a>
-            <a href="#about" className="btn btn-outline"
-              style={{ color: '#fff', borderColor: 'rgba(255,255,255,0.45)', display:'flex', alignItems:'center', gap:'6px' }}>
+            <a
+              href="#about"
+              className="btn btn-outline hero-outline-btn"
+            >
               Learn More <FiArrowRight />
             </a>
           </div>

@@ -1,16 +1,33 @@
 .hero {
   min-height: 100vh;
-  background:
-    linear-gradient(135deg, rgba(26,10,0,0.75) 0%, rgba(92,45,10,0.50) 100%),
-    url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=75&fm=webp') center/cover no-repeat;
+  /* Background color as instant placeholder while image loads */
+  background: #1a0a00;
   display: flex;
   align-items: center;
   justify-content: center;
   padding-top: 70px;
   position: relative;
   overflow: hidden;
-  /* Hint browser to start decoding early */
-  content-visibility: auto;
+}
+
+/* The real <img> tag — absolutely fills the section, same look as before */
+.hero-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+/* Gradient overlay — same as before, just now on a pseudo-element */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(26,10,0,0.80) 0%, rgba(92,45,10,0.55) 100%);
+  z-index: 1;
 }
 
 .hero::after {
@@ -20,23 +37,26 @@
   height: 80px;
   background: var(--cream);
   clip-path: ellipse(55% 100% at 50% 100%);
+  z-index: 2;
 }
 
 .hero .container {
   display: flex;
   justify-content: center;
+  position: relative;
+  z-index: 3;
 }
 
 .hero-content {
-  position: relative;
-  z-index: 2;
   max-width: 680px;
   text-align: center;
   animation: fadeUp 0.9s ease both;
 }
 
 .hero-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   background: rgba(255,107,44,0.18);
   border: 1px solid rgba(255,107,44,0.4);
   color: #ffb08a;
@@ -64,7 +84,7 @@
 
 .hero p {
   font-size: 1.05rem;
-  color: rgba(255,255,255,0.80);
+  color: rgba(255,255,255,0.82);
   margin-bottom: 36px;
   line-height: 1.7;
   animation: fadeUp 0.9s 0.3s ease both;
@@ -76,6 +96,11 @@
   flex-wrap: wrap;
   justify-content: center;
   animation: fadeUp 0.9s 0.4s ease both;
+}
+
+.hero-outline-btn {
+  color: #fff;
+  border-color: rgba(255,255,255,0.45);
 }
 
 .hero-stats {
@@ -96,7 +121,7 @@
 
 .hero-stat-label {
   font-size: 0.80rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.6);
   letter-spacing: 0.5px;
   margin-top: 4px;
 }
