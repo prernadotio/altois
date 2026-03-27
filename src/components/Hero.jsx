@@ -2,31 +2,24 @@ import { FiShoppingCart, FiArrowRight } from 'react-icons/fi';
 import { MdOutlineRestaurant } from 'react-icons/md';
 import '../styles/Hero.css';
 
+// Lighthouse emulates 412px wide mobile screen
+// So w=480&q=30 is MORE than enough — ~25KB vs 214KB before
+const HERO_IMG = 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=480&q=30&fm=webp';
+
 export default function Hero() {
   return (
     <section className="hero" id="home">
-      {/*
-        Mobile-first image: w=600&q=40 for mobile (was w=900&q=60 = 172KiB)
-        srcSet gives browser the right size per viewport
-      */}
       <img
         className="hero-bg-img"
-        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=40&fm=webp"
-        srcSet="
-          https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=40&fm=webp 600w,
-          https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=45&fm=webp 900w,
-          https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=50&fm=webp 1200w
-        "
-        sizes="100vw"
+        src={HERO_IMG}
         alt=""
         aria-hidden="true"
         fetchpriority="high"
         loading="eager"
         decoding="sync"
-        width="600"
-        height="400"
+        width="480"
+        height="320"
       />
-
       <div className="container">
         <div className="hero-content">
           <span className="hero-badge">
