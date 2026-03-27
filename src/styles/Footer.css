@@ -1,6 +1,6 @@
 .footer {
   background: var(--dark);
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.75);
   padding: 48px 0 28px;
 }
 
@@ -27,7 +27,6 @@
   font-size: 0.88rem;
   line-height: 1.7;
   max-width: 260px;
-  /* Fix: was rgba(255,255,255,0.6) — use solid for better contrast on dark bg */
   color: rgba(255,255,255,0.75);
 }
 
@@ -36,18 +35,12 @@
   font-size: 0.95rem;
   font-weight: 500;
   margin-bottom: 16px;
-  letter-spacing: 0.3px;
 }
 
-.footer-col ul {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+.footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 10px; }
 
 .footer-col ul li a {
-  color: rgba(255,255,255,0.70);
+  color: rgba(255,255,255,0.75);
   text-decoration: none;
   font-size: 0.88rem;
   transition: color 0.2s;
@@ -55,11 +48,7 @@
 
 .footer-col ul li a:hover { color: var(--orange); }
 
-.footer-social {
-  display: flex;
-  gap: 12px;
-  margin-top: 20px;
-}
+.footer-social { display: flex; gap: 12px; margin-top: 20px; }
 
 .social-link {
   width: 36px; height: 36px;
@@ -70,16 +59,16 @@
   text-decoration: none;
   font-size: 1rem;
   color: rgba(255,255,255,0.75);
-  transition: background 0.2s;
+  transition: background 0.2s, color 0.2s;
 }
 
 .social-link:hover { background: var(--orange); color: #fff; }
 
-/* Fix: was rgba(255,255,255,0.3) — too low contrast. Use 0.55 minimum */
+/* rgba(255,255,255,0.60) on #1A0A00 = ~7:1 contrast — passes WCAG AA */
 .footer-bottom {
   text-align: center;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.60);
 }
 
 @media (max-width: 768px) {
