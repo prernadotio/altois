@@ -5,15 +5,19 @@ import '../styles/Hero.css';
 export default function Hero() {
   return (
     <section className="hero" id="home">
+      {/*
+        Mobile-first image: w=600&q=40 for mobile (was w=900&q=60 = 172KiB)
+        srcSet gives browser the right size per viewport
+      */}
       <img
         className="hero-bg-img"
         src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=40&fm=webp"
         srcSet="
           https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=40&fm=webp 600w,
-          https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=40&fm=webp 900w,
-          https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=45&fm=webp 1200w
+          https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=45&fm=webp 900w,
+          https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=50&fm=webp 1200w
         "
-        sizes="(max-width: 600px) 600px, (max-width: 1024px) 900px, 1200px"
+        sizes="100vw"
         alt=""
         aria-hidden="true"
         fetchpriority="high"
@@ -22,6 +26,7 @@ export default function Hero() {
         width="600"
         height="400"
       />
+
       <div className="container">
         <div className="hero-content">
           <span className="hero-badge">

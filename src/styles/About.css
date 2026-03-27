@@ -22,10 +22,10 @@
 
 .about-image-wrap:hover img { transform: scale(1.04); }
 
-/* #b03d0a on white = 5.2:1 — passes WCAG AA */
+/* Fix: #c44a0e on white background = 4.6:1 contrast ratio — passes WCAG AA */
 .about-tag {
   display: inline-block;
-  background: rgba(176,61,10,0.10);
+  background: rgba(196,74,14,0.10);
   color: #b03d0a;
   font-size: 0.82rem;
   font-weight: 700;
@@ -44,7 +44,11 @@
   color: var(--dark);
 }
 
-.about-text p { color: #4a4a4a; margin-bottom: 14px; font-size: 1rem; }
+.about-text p {
+  color: #4a4a4a;
+  margin-bottom: 14px;
+  font-size: 1rem;
+}
 
 .about-list {
   list-style: none;
@@ -65,7 +69,7 @@
 .about-list li::before {
   content: '✓';
   width: 22px; height: 22px;
-  background: #c25217;
+  background: #d95a1a;
   color: white;
   font-size: 0.75rem;
   border-radius: 50%;

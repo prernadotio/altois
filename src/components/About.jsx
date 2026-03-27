@@ -6,11 +6,12 @@ export default function About() {
       <div className="container">
         <div className="about-grid">
           <div className="about-image-wrap">
+            {/* Fix: explicit width/height prevents layout shift, lazy load saves bandwidth */}
             <img
-              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600&q=50&fm=webp"
+              src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=700&q=75&fm=webp"
               alt="Home kitchen cooking"
-              width="600"
-              height="450"
+              width="700"
+              height="525"
               loading="lazy"
               decoding="async"
             />
@@ -19,11 +20,11 @@ export default function About() {
             <span className="about-tag">Our Story</span>
             <h2>Cooked with Love,<br />Delivered with Care</h2>
             <p>
-              GharKaKhana started in 2021 when Sunita Sharma began making home-cooked
+              GharKaKhana started in 2021 when Sunita Sharma began making home-cooked 
               tiffins for working professionals in Mumbai who missed their maa ke haath ka khana.
             </p>
             <p>
-              Today, we serve hundreds of families across Mumbai — same recipes, same love,
+              Today, we serve hundreds of families across Mumbai — same recipes, same love, 
               same fresh ingredients. No preservatives, no shortcuts. Just real food.
             </p>
             <ul className="about-list">
