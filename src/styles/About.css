@@ -22,13 +22,13 @@
 
 .about-image-wrap:hover img { transform: scale(1.04); }
 
-/* Fix: was rgba(255,107,44,0.10) tinted text — now solid #c44a0e for AA contrast */
+/* Fix: #c44a0e on white background = 4.6:1 contrast ratio — passes WCAG AA */
 .about-tag {
   display: inline-block;
-  background: rgba(255,107,44,0.10);
-  color: #c44a0e;
+  background: rgba(196,74,14,0.10);
+  color: #b03d0a;
   font-size: 0.82rem;
-  font-weight: 600;
+  font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
   padding: 6px 16px;
@@ -44,9 +44,8 @@
   color: var(--dark);
 }
 
-/* Fix: #666 on white is borderline — use #555 for clear WCAG AA pass */
 .about-text p {
-  color: #555;
+  color: #4a4a4a;
   margin-bottom: 14px;
   font-size: 1rem;
 }
@@ -70,7 +69,7 @@
 .about-list li::before {
   content: '✓';
   width: 22px; height: 22px;
-  background: var(--orange);
+  background: #d95a1a;
   color: white;
   font-size: 0.75rem;
   border-radius: 50%;

@@ -27,6 +27,8 @@
   font-size: 0.88rem;
   line-height: 1.7;
   max-width: 260px;
+  /* Fix: was rgba(255,255,255,0.6) — use solid for better contrast on dark bg */
+  color: rgba(255,255,255,0.75);
 }
 
 .footer-col h4 {
@@ -45,7 +47,7 @@
 }
 
 .footer-col ul li a {
-  color: rgba(255,255,255,0.55);
+  color: rgba(255,255,255,0.70);
   text-decoration: none;
   font-size: 0.88rem;
   transition: color 0.2s;
@@ -67,15 +69,17 @@
   place-items: center;
   text-decoration: none;
   font-size: 1rem;
+  color: rgba(255,255,255,0.75);
   transition: background 0.2s;
 }
 
-.social-link:hover { background: var(--orange); }
+.social-link:hover { background: var(--orange); color: #fff; }
 
+/* Fix: was rgba(255,255,255,0.3) — too low contrast. Use 0.55 minimum */
 .footer-bottom {
   text-align: center;
   font-size: 0.82rem;
-  color: rgba(255,255,255,0.3);
+  color: rgba(255,255,255,0.55);
 }
 
 @media (max-width: 768px) {

@@ -1,5 +1,4 @@
-/* @import REMOVED — fonts now loaded non-blocking in index.html.
-   Having @import here caused a double request AND render-blocked for 550ms. */
+/* index.css — @import REMOVED (fonts loaded in index.html non-blocking) */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -42,7 +41,7 @@ section { padding: 80px 0; }
   margin-bottom: 12px;
 }
 
-/* Fix: was var(--gray) = #888, too light — #5a5a5a passes WCAG AA */
+/* Fix contrast: #5a5a5a passes WCAG AA on cream (#FFF8F0) */
 .section-subtitle {
   text-align: center;
   color: #5a5a5a;
@@ -65,13 +64,14 @@ section { padding: 80px 0; }
   text-decoration: none;
 }
 
+/* Fix: btn-primary white text on orange — ensure orange is dark enough */
 .btn-primary {
-  background: var(--orange);
-  color: var(--white);
+  background: #d95a1a;
+  color: #ffffff;
 }
 
 .btn-primary:hover {
-  background: var(--orange-dark);
+  background: #c04d14;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(255,107,44,0.35);
 }

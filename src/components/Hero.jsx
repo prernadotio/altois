@@ -6,25 +6,25 @@ export default function Hero() {
   return (
     <section className="hero" id="home">
       {/*
-        CRITICAL LCP FIX:
-        Browser cannot preload CSS background-image — it only discovers it
-        after parsing CSS, which is too late. LCP was hitting the navbar logo
-        instead of the food image.
-
-        Solution: real <img> tag with fetchpriority="high" + loading="eager"
-        so browser fetches it immediately in the HTML parse phase.
-        The image is absolutely positioned to fill the section — UI is identical.
+        Mobile-first image: w=600&q=40 for mobile (was w=900&q=60 = 172KiB)
+        srcSet gives browser the right size per viewport
       */}
       <img
         className="hero-bg-img"
-        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=60&fm=webp"
+        src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=40&fm=webp"
+        srcSet="
+          https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=600&q=40&fm=webp 600w,
+          https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=900&q=45&fm=webp 900w,
+          https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1200&q=50&fm=webp 1200w
+        "
+        sizes="100vw"
         alt=""
         aria-hidden="true"
         fetchpriority="high"
         loading="eager"
         decoding="sync"
-        width="900"
-        height="600"
+        width="600"
+        height="400"
       />
 
       <div className="container">
@@ -43,10 +43,7 @@ export default function Hero() {
             <a href="#menu" className="btn btn-primary">
               <FiShoppingCart /> Order Now
             </a>
-            <a
-              href="#about"
-              className="btn btn-outline hero-outline-btn"
-            >
+            <a href="#about" className="btn btn-outline hero-outline-btn">
               Learn More <FiArrowRight />
             </a>
           </div>
