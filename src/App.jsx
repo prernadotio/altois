@@ -1,25 +1,34 @@
+import { lazy, Suspense } from 'react';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
-import About from './components/About';
-import Services from './components/Services';
-import Menu from './components/Menu';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import Footer from './components/Footer';
+
+// Lazy load all below-fold components — inhe tab hi load karo jab zarurat ho
+const About       = lazy(() => import('./components/About'));
+const Services    = lazy(() => import('./components/Services'));
+const Menu        = lazy(() => import('./components/Menu'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const Contact     = lazy(() => import('./components/Contact'));
+const Footer      = lazy(() => import('./components/Footer'));
 
 export default function App() {
   return (
     <>
+      {/* Navbar + Hero: above fold — eager load */}
       <Navbar />
       <main>
         <Hero />
-        <About />
-        <Services />
-        <Menu />
-        <Testimonials />
-        <Contact />
+        {/* Suspense: fallback=null — no spinner flash, smooth load */}
+        <Suspense fallback={null}>
+          <About />
+          <Services />
+          <Menu />
+          <Testimonials />
+          <Contact />
+        </Suspense>
       </main>
-      <Footer />
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </>
   );
 }

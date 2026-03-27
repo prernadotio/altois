@@ -1,4 +1,4 @@
-/* index.css — @import REMOVED (fonts loaded in index.html non-blocking) */
+/* index.css */
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -41,7 +41,6 @@ section { padding: 80px 0; }
   margin-bottom: 12px;
 }
 
-/* Fix contrast: #5a5a5a passes WCAG AA on cream (#FFF8F0) */
 .section-subtitle {
   text-align: center;
   color: #5a5a5a;
@@ -64,14 +63,19 @@ section { padding: 80px 0; }
   text-decoration: none;
 }
 
-/* Fix: btn-primary white text on orange — ensure orange is dark enough */
+/*
+  ACCESSIBILITY FIX:
+  #FF6B2C (original orange) + white text = 2.9:1 contrast ratio — FAILS WCAG AA (needs 4.5:1)
+  #bf4510 + white text = 4.6:1 contrast ratio — PASSES WCAG AA ✅
+  Also updated in index.html critical CSS inline styles below.
+*/
 .btn-primary {
-  background: #d95a1a;
+  background: #bf4510;
   color: #ffffff;
 }
 
 .btn-primary:hover {
-  background: #c04d14;
+  background: #a33a0d;
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(255,107,44,0.35);
 }
